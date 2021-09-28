@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Amur.Provider"
+             Title="Registrarse como negocio">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Entry x:Name="firstName"
+                           Placeholder="Nombre"
+                           FontSize="Large"
+                           WidthRequest="130"
+                           Margin="10"
+                           Keyboard="Default"/>
+
+                    <Entry x:Name="lastName"
+                           Placeholder="Apellidos"
+                           FontSize="Large"
+                           HorizontalOptions="FillAndExpand"
+                           Margin="10"
+                           Keyboard="Default"/>
+                </StackLayout>
+
+                <Entry x:Name="street"
+                       Placeholder="Calle"
+                       FontSize="Large"
+                       Margin="10"
+                       Keyboard="Default"/>
+
+                <Entry x:Name="neighborhood"
+                       Placeholder="Colonia"
+                       FontSize="Large"
+                       Margin="10"
+                       Keyboard="Default"/>
+
+                <Picker Title="Municipio"
+                        FontSize="Large"
+                        x:Name="region"
+                        Margin="10">
+                    <Picker.Items>
+                        <x:String>Colima</x:String>
+                        <x:String>Villa de Álvarez</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Entry x:Name="phoneNumber"
+                       Placeholder="Teléfono"
+                       FontSize="Large"
+                       Margin="10"
+                       Keyboard="Telephone"/>
+
+                <Entry  x:Name="email" 
+                        Placeholder="Email"
+                        FontSize="Large"
+                        Margin="10"
+                        TextTransform="Lowercase"
+                        Keyboard="Email"/>
+
+                <Entry  x:Name="password" 
+                        Placeholder="Contraseña"
+                        FontSize="Large"
+                        Margin="10"
+                        Keyboard="Default"
+                        IsPassword="True"/>
+
+                <Entry x:Name="businessName"
+                           Placeholder="Nombre del negocio"
+                           FontSize="Large"
+                           WidthRequest="130"
+                           Margin="10"
+                           Keyboard="Default"/>
+
+                <Picker Title="Categoría del negocio"
+                    FontSize="Large"
+                    ItemsSource="{Binding categories}"
+                    ItemDisplayBinding="{Binding Name}"
+                    x:Name="categoriesList"
+                    Margin="10"/>
+
+                <StackLayout Margin="10">
+                    <Label Text="¿No encuentras la categoría adecuada? Agregela " FontSize="26" />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Entry Placeholder="Nombre de la categoria" FontSize="26" x:Name="newCategory" AnchorX="100" Grid.Column="0" />
+                        <Button Text="Agregar" Grid.Column="1" Clicked="Button_Clicked" x:Name="btnCategory" />
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout Margin="10">
+                    <Label  Text="Medios de pago:"
+                            FontSize="Large"/>
+                    <StackLayout Orientation="Horizontal"
+                                 HorizontalOptions="Center">
+                        <Label  Text="Efectivo"
+                                FontSize="Large"/>
+                        <CheckBox x:Name="cashCheck"/>
+
+                        <Label  Text="Tarjeta"
+                                FontSize="Large"/>
+                        <CheckBox x:Name="cardCheck"/>
+                    </StackLayout>
+
+                    <Label  Text="Ofrece:"
+                            FontSize="Large"/>
+                    <StackLayout Orientation="Horizontal"
+                                 HorizontalOptions="Center">
+                        <Label  Text="Servicios"
+                                FontSize="Large"/>
+                        <CheckBox x:Name="servicesCheck"/>
+
+                        <Label  Text="Productos"
+                                FontSize="Large"/>
+                        <CheckBox x:Name="productsCheck"/>
+                    </StackLayout>
+                </StackLayout>
+
+                
+                <!--<Label  Text="Credencial del IFE"
+                        FontSize="Large"
+                        Margin="10,5"/>
+                <StackLayout Margin="10,0"
+                             Orientation="Horizontal">
+                    <Button Text="Galería"
+                            Clicked="Button_Clicked_1"        
+                            FontSize="Large"/>
+                    <Button Text="Cámara"
+                            Clicked="Button_Clicked_3"        
+                            FontSize="Large"/>
+                </StackLayout>
+                <StackLayout Margin="10,0">
+                    <Image x:Name="resultImage"
+                           WidthRequest="100"/>
+                </StackLayout>-->
+
+                <!--<StackLayout Margin="10, 0">
+                    <Label  Text="Logo del negocio"
+                            FontSize="Large"/>
+                    <Button Text="Galería"
+                            Clicked="Button_Clicked_2"        
+                            FontSize="Large"/>
+                    <Image x:Name="resultLogo"
+                           WidthRequest="100"/>
+                </StackLayout>-->
+
+                <Entry x:Name="ine"
+                           Placeholder="Foto de tu INE"
+                           FontSize="Large"
+                           WidthRequest="130"
+                           Margin="10"
+                           Keyboard="Default"/>
+                
+                <Entry x:Name="businessLogo"
+                           Placeholder="Logo de tu negocio"
+                           FontSize="Large"
+                           WidthRequest="130"
+                           Margin="10"
+                           Keyboard="Default"/>
+
+                <Button Text="Registrarse"
+                        Clicked="signUp"    
+                        FontSize="Large"
+                        Margin="10, 0"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
